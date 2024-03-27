@@ -1,0 +1,43 @@
+{
+	auto_https disable_certs
+}
+
+avatour.duckdns.org {
+	tls /etc/caddy/tls.crt /etc/caddy/tls.key
+	respond "404 fucks not found"
+}
+
+stream.avatour.duckdns.org {
+	tls /etc/caddy/tls.crt /etc/caddy/tls.key
+	reverse_proxy avatour.duckdns.org:8889
+}
+
+speech.avatour.duckdns.org {
+	tls /etc/caddy/tls.crt /etc/caddy/tls.key
+	reverse_proxy avatour.duckdns.org:5005
+}
+
+motion.avatour.duckdns.org {
+	tls /etc/caddy/tls.crt /etc/caddy/tls.key
+	reverse_proxy avatour.duckdns.org:5000
+}
+
+dashboard.avatour.duckdns.org {
+	tls /etc/caddy/tls.crt /etc/caddy/tls.key
+	reverse_proxy avatour.duckdns.org:3000
+}
+
+app.avatour.duckdns.org {
+	tls /etc/caddy/tls.crt /etc/caddy/tls.key
+	reverse_proxy avatour.duckdns.org:8080
+}
+
+assistant.avatour.duckdns.org {
+	tls /etc/caddy/tls.crt /etc/caddy/tls.key
+	reverse_proxy avatour.duckdns.org:3001
+}
+
+ai.avatour.duckdns.org {
+	tls /etc/caddy/tls.crt /etc/caddy/tls.key
+	reverse_proxy avatour.duckdns.org:9542	
+}
