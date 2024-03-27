@@ -2,6 +2,8 @@
 
 This repository contains a [Caddy](https://github.com/caddyserver/caddy) web server deployment to provide TLS termination for all `*.avatour.duckdns.org` domains. This is important as browsers restrict a lot of functionality when running in an insecure context, especially cross-origin.
 
+The Caddy proxy also provides HTTP3 support, which browsers can take advantage of to provide faster connections.
+
 ## Running
 
 You need to provide the file `tls.key` as the private key for TLS termination.
